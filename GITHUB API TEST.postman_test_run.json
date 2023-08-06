@@ -1,0 +1,163 @@
+{
+	"id": "ed912d8e-d070-4389-89cd-3f9e87e7a335",
+	"name": "GITHUB API TEST",
+	"timestamp": "2023-08-06T07:24:32.261Z",
+	"collection_id": "28547069-2d3d09ea-ad2a-4680-b55d-2ad745ea2b95",
+	"folder_id": 0,
+	"environment_id": "28547069-5905ad0c-032e-4d42-ab06-6bfe389d394c",
+	"totalPass": 11,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-08-06T07:24:29.156Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "01e8c39c-c4c5-4c45-9478-7dba375232d4",
+			"name": "GET REPO",
+			"url": "https://api.github.com/users/Noorulain718/repos",
+			"time": 484,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": true,
+				"Response data format is correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response data format is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				484
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true,
+					"Response data format is correct": true
+				}
+			]
+		},
+		{
+			"id": "2ee12761-030d-4c2c-82b3-ddc3340febcd",
+			"name": "CREATE REPO",
+			"url": "https://api.github.com/user/repos",
+			"time": 1263,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Your test name": true,
+				"Status code is 201": true,
+				"Response time is less than 200ms": true,
+				"Response data format is correct": true
+			},
+			"testPassFailCounts": {
+				"Your test name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response data format is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1263
+			],
+			"allTests": [
+				{
+					"Your test name": true,
+					"Status code is 201": true,
+					"Response time is less than 200ms": true,
+					"Response data format is correct": true
+				}
+			]
+		},
+		{
+			"id": "3427338f-1cc9-415a-8efa-3f487d8400c8",
+			"name": "UPDATE REPO",
+			"url": "https://api.github.com/repos/Noorulain718/POSTMAN-RESTAPI",
+			"time": 584,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Your test name": true,
+				"Status code is 200": true,
+				"Response time is less than 200ms": true,
+				"Response data format is correct": true
+			},
+			"testPassFailCounts": {
+				"Your test name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response data format is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				584
+			],
+			"allTests": [
+				{
+					"Your test name": true,
+					"Status code is 200": true,
+					"Response time is less than 200ms": true,
+					"Response data format is correct": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2331,
+	"collection": {
+		"requests": [
+			{
+				"id": "01e8c39c-c4c5-4c45-9478-7dba375232d4",
+				"method": "GET"
+			},
+			{
+				"id": "2ee12761-030d-4c2c-82b3-ddc3340febcd",
+				"method": "POST"
+			},
+			{
+				"id": "3427338f-1cc9-415a-8efa-3f487d8400c8",
+				"method": "PATCH"
+			}
+		]
+	}
+}

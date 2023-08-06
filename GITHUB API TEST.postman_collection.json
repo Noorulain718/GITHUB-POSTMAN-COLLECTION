@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "2d3d09ea-ad2a-4680-b55d-2ad745ea2b95",
+		"name": "GITHUB API TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28547069"
+	},
+	"item": [
+		{
+			"name": "GET REPO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response data format is correct\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{githuburl}}/users/Noorulain718/repos",
+					"host": [
+						"{{githuburl}}"
+					],
+					"path": [
+						"users",
+						"Noorulain718",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE REPO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var repoName = jsonData[\"name\"];\r",
+							"    pm.globals.set(\"repoName\",repoName);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response data format is correct\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"TESTING POSTMAN RESTAPI\",\r\n  \"description\": \"This is my first repo!\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{githuburl}}/user/repos",
+					"host": [
+						"{{githuburl}}"
+					],
+					"path": [
+						"user",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE REPO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    if(jsonData['name'] == 'TESTING GITHUB RESTAPI'){\r",
+							"        postman.setNextRequest('ping');\r",
+							"    }\r",
+							"    else{\r",
+							"        postman.setNextRequest(null);\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response data format is correct\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"owner\": \"Noorulain718\",\r\n  \"repo\": \"TESTING POSTMAN RESTAPI\",\r\n  \"name\": \"TESTING GITHUB RESTAPI\",\r\n  \"description\": \"This is my first repository\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{githuburl}}/repos/Noorulain718/TESTING-POSTMAN-API",
+					"host": [
+						"{{githuburl}}"
+					],
+					"path": [
+						"repos",
+						"Noorulain718",
+						"TESTING-POSTMAN-API"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETEREPO",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{githuburl}}/repos/Noorulain718/TESTING-POSTMAN-RESTAPI",
+					"host": [
+						"{{githuburl}}"
+					],
+					"path": [
+						"repos",
+						"Noorulain718",
+						"TESTING-POSTMAN-RESTAPI"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "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",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "githuburl",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
